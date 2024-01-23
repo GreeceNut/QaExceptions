@@ -27,7 +27,7 @@ public class ShopRepository {
      */
 
     public void add(Product product) {
-        Product removingSameId = findById (product.id);
+        Product removingSameId = findById(product.id);
         if (removingSameId != null) {
             throw new AlreadyExistsException("Element with id: " + product.id + " already exist");
         }
@@ -65,12 +65,4 @@ public class ShopRepository {
         return null;
     }
 
-    public Product findSameId (int id){
-        for (Product product : products) {
-            if (product.id != id) {
-                return product;
-            }
-        }
-        return null;
-    }
 }
